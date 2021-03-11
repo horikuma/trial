@@ -1,0 +1,20 @@
+generic_message : start_line
+start_line      : request_line | status_line
+
+request_line    : method request_uri sip_version
+method          : /[/WORD]/
+request_uri     : proto ":" number
+sip_version     : "SIP/2.0"
+
+status_line     : sip_version status_code reason_phrase
+
+
+proto           : WORD
+number          : SIGNED_NUMBER
+status_code     : SIGNED_NUMBER
+reason_phrase   : WORD
+
+%import common.WORD
+%import common.SIGNED_NUMBER
+%import common.WS
+%ignore WS
