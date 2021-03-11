@@ -5,8 +5,8 @@ name = "pypi"
 
 [packages]
 lark-parser = "*"
-install = "*"
 jupyterlab = "*"
+numpy = "*"
 
 [dev-packages]
 
